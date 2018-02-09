@@ -5,15 +5,15 @@
 
 .header {
 	display: flex;
-	margin: 10px 0;
-	align-items: center;
+	margin: 0.3125rem 0;
+	height: 5.625rem;
 	text-align: center;
 	justify-content: space-between;
 }
 
 .logo__pic {
-	width: 90px;
-	height: 75px;
+	width: 5.625rem;
+	height: 4.6875rem;
 }
 
 .nav {
@@ -22,36 +22,72 @@
 	text-transform: uppercase;
 	align-items: center;
 	text-align: center;
-	margin-left: 20px;
 }
 .nav-list {
 	display: flex;
-	list-style: disc;
+
+	@include tablets() {
+		display: none;
+	}
+
+
 }
 
 .nav__item {
 	display: flex;
 	align-items: center;
-	margin: 0 10px;
-	font-size: 13px;
+	margin-right:0.8125rem;
+	font-size: 0.8125rem;
 	font-family: Ubuntu Medium, sans-serif;
 }
 
 
 .nav__item:after {
 	content: "";
-	width: 5px;
-	height: 5px;
+	width: 0.25rem;
+	height: 0.25rem;
 	background-color: #fff;
 	border-radius: 50%;
 }
 
+.nav__item:last-child:after {
+	content: "";
+	width: 0;
+	height: 0;
+}
 
 .nav__link {
-	padding-right: 20px;
+	padding-right: 0.9375rem;
 }
 
 
+.hamburger-menu-link {
+	vertical-align: middle;
+	position: relative;
+	height: 1.375rem;
+	align-items: center;
+	margin-left: 1.875rem;
+	display: none;
+
+	@include tablets {
+		display: flex;
+	}
+}
+
+.hamburger-menu-link_bars {
+	&, &:before, &:after {
+		background: #fff;
+		width: 1.5rem;
+		height: 0.3125rem;
+		border-radius: 0.1875rem;
+		}
+
+		&:before, &:after {
+			content: "";
+			display: block;
+			position: absolute;
+		}
+}
 
 
 
@@ -63,6 +99,10 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+
+	@include tablets {
+		flex-direction: column;
+	}
 }
 
 .burger__pic {
@@ -70,18 +110,36 @@
 	width:50%;
 	justify-content: center;
 	align-items: center;
+
+	@include tablets {
+		width: 80%;
+		text-align: center;
+	}
+}
+
+.burger__pic-img {
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .burger__desc{
 	width:50%;
 	display: flex;
 	flex-wrap: wrap;
+	padding-top: 3.75rem;
+
+	@include tablets {
+		width: 80%;
+		text-align: center;
+	}
 }
 
 .section-title-add {
 	font-family: Lifehack, sans-serif;
-	font-size: 65px;
+	font-size: 4.0625rem;
 	text-transform: lowercase;
+	color: #fff;
+	display: flex;
 }
 
 .arrow {
@@ -89,5 +147,6 @@
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	bottom: 20px;
+	bottom: 1.25rem;
+	align-self: center;
 }

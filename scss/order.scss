@@ -1,26 +1,75 @@
 .section-order{
 	background: url(../img/bg/order_bg.jpg) center center no-repeat; 
 	background-size: cover;
-  align-items: center;
+  padding-top: 7.5rem;
 }
 
-.form__input {
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
+.form {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+}
+
+.form-left, .form-right{
+  width: 50%;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem; 
 }
 
 .form__row {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  width: 100%;
 }
 
 .form__block {
   flex: 1;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   
   &:last-child {
     margin-right: 0;
   }
+}
+
+.form__input {
+  border: none;
+  border-radius: 0.3125rem;
+  margin: 0.25rem;
+  width: 100%;
+  padding: 0.625rem;
+  display: flex;
+  outline: none;
+
+
+    @include tablets {
+ 
+      flex-direction: column;
+      align-items: center;
+      width: 65%;
+      margin: 0;
+    }
+}
+
+.form__textarea {
+  resize: none; 
+  border: none;
+  border-radius: 0.3125rem;
+  margin: 0.25rem;
+  width: 100%;
+  padding: 0.9375rem;
+  display: flex;
+    outline: none;
+}
+
+.form__checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.form__checkbox-input {
+  border: none;
+}
+
+.checkbox__title {
+  margin: 0 0.625rem; 
 }
